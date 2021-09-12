@@ -3,6 +3,7 @@ const loadProducts = () => {
   fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts(data));
+  // showProducts hobe data te
 };
 loadProducts();
 
@@ -10,12 +11,12 @@ loadProducts();
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    const image = product.images;
+    // let image = product.images;
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
       <div>
-    <img class="product-image" src=${image}></img>
+    <img class="product-image" src=${product.image}></img>
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
@@ -26,6 +27,10 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+
+
+
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
