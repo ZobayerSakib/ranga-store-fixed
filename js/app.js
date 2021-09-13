@@ -7,28 +7,21 @@ const loadProducts = () => {
 };
 loadProducts();
 
-
 // show all product in UI 
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    // const dam = product.price;
-    // console.log(dam)
-    // let takasent = document.getElementById('price').innerText = dam.toFixed(2);
-
-
-
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product">
+    div.innerHTML = `<div class="single-product height-50">
       <div>
     <img class="product-image" src=${product.image}></img>
       </div>
       <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
-      <h2>Price: $ ${product.price}</h2>
-      <p>Rating: ${product.rating.rate}</p>
-      <p>Average ${product.rating.count} Person rated this Product</p>
+      <h4 class="text-left commonTextColor">Category: ${product.category}</h4>
+      <h2 class="text-left commonTextColor">Price: $ ${product.price}</h2>
+      <h4 class="text-left commonTextColor">Rating: ${product.rating.rate}</h4>
+      <p class="commonTextColor" >Average ${product.rating.count} Person rated this Product</p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn addCartButton">Add to cart</button>
       <button id="details-btn" class="btn detailsButton">Details</button></div>
       `;

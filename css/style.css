@@ -32,6 +32,14 @@ body {
 
 /*---------------------------- All products section----------------------
 --------------------------------------------------------------------------- */
+.commonTextColor{
+  color:#0000ff94
+}
+.commonTextColor:hover{
+  font-style: italic;
+}
+
+
 #all-products {
   background-image:url('/images/product-bg.png');
   background-repeat: no-repeat; 
