@@ -13,13 +13,13 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product height-50">
+    div.innerHTML = `<div class="single-product">
       <div>
     <img class="product-image" src=${product.image}></img>
       </div>
       <h3>${product.title}</h3>
       <h4 class="text-left commonTextColor">Category: ${product.category}</h4>
-      <h2 class="text-left commonTextColor">Price: $ ${product.price}</h2>
+      <h3 class="text-left commonTextColor">Price: $ ${product.price}</h3>
       <h4 class="text-left commonTextColor">Rating: ${product.rating.rate}</h4>
       <p class="commonTextColor" >Average ${product.rating.count} Person rated this Product</p>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn addCartButton">Add to cart</button>
@@ -29,8 +29,6 @@ const showProducts = (products) => {
 
   }
 };
-
-
 
 
 let count = 0;
@@ -84,9 +82,10 @@ const updateTaxAndCharge = () => {
 const updateTotal = () => {
   const grandTotal = getInputValue("price") + getInputValue("delivery-charge") +
     getInputValue("total-tax");
-  // const totalAmount = document.getElementById("total").innerText = grandTotal;
-  const totalAmount = document.getElementById("total").innerText = Math.round((grandTotal + Number.EPSILON) * 100) / 100;;
-
-
-
+  document.getElementById("total").innerText = Math.round((grandTotal + Number.EPSILON) * 100) / 100;
 };
+
+// Buy now button
+const buyNowButton = () => {
+  document.getElementById('buyNow').innerText = 'Thanks for visiting our Site.'
+}
