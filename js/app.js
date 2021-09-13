@@ -14,9 +14,9 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     // let image = product.images;
 
-    // const dam = product.price;
-    // console.log(dam)
-    // const takasent = document.getElementById('taka').innerText = (dam.toFixed(2));
+    const dam = product.price;
+    console.log(dam)
+    let takasent = document.getElementById('price').innerText = dam.toFixed(2);
 
 
 
