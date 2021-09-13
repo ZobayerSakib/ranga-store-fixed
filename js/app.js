@@ -1,3 +1,5 @@
+// Products API here
+
 const loadProducts = () => {
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
@@ -30,7 +32,6 @@ const showProducts = (products) => {
   }
 };
 
-
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -51,13 +52,11 @@ const updatePrice = (id, value) => {
   const convertedOldPrice = getInputValue(id);
   const convertPrice = parseFloat(value);
   const total = convertedOldPrice + convertPrice;
-  // document.getElementById(id).innerText = Math.round(total);
   document.getElementById(id).innerText = Math.round((total + Number.EPSILON) * 100) / 100;
 };
 
 // set innerText function
 const setInnerText = (id, value) => {
-  // document.getElementById(id).innerText = Math.round(value);
   document.getElementById(id).innerText = Math.round((value + Number.EPSILON) * 100) / 100;
 };
 

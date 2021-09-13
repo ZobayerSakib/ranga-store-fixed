@@ -39,7 +39,6 @@ body {
   font-style: italic;
 }
 
-
 #all-products {
   background-image:url('/images/product-bg.png');
   background-repeat: no-repeat; 
@@ -103,7 +102,7 @@ body {
   color:white;
 }
 
-/* -------------------------------Responsive design Section ----------------------
+/* -------------------------------Responsive design Section here ----------------------
 ----------------------------------------------------------------------------------*/
 @media only screen and (max-width: 768px) {
   #all-products {
