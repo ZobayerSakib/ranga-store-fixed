@@ -12,11 +12,9 @@ loadProducts();
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    // let image = product.images;
-
-    const dam = product.price;
-    console.log(dam)
-    let takasent = document.getElementById('price').innerText = dam.toFixed(2);
+    // const dam = product.price;
+    // console.log(dam)
+    // let takasent = document.getElementById('price').innerText = dam.toFixed(2);
 
 
 
@@ -28,11 +26,11 @@ const showProducts = (products) => {
       </div>
       <h3>${product.title}</h3>
       <p>Category: ${product.category}</p>
-      <h4>Rating: ${product.rating.rate}</h4>
-      <h4>Average Rate: ${product.rating.count}</h4>
-      <h2>Price: $ ${takasent}</h2>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <h2>Price: $ ${product.price}</h2>
+      <p>Rating: ${product.rating.rate}</p>
+      <p>Average ${product.rating.count} Person rated this Product</p>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn addCartButton">Add to cart</button>
+      <button id="details-btn" class="btn detailsButton">Details</button></div>
       `;
     document.getElementById("all-products").appendChild(div);
 
